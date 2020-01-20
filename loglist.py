@@ -34,8 +34,51 @@ if response.status_code != 200:
 
 # collect the hosts
 
-hosts_response = json.loads(response.text)
-# host_list = hosts_response['entityId']
+hosts = json.loads(response.text)
+host_list = []
+# host_list = hosts_response['']['entityId']
 
 print('\n')
-print(hosts_response)
+# print(hosts)
+
+for host in hosts:
+    host_list.append(host['entityId'])
+
+# a list of hosts
+print(host_list)
+
+# query the logs
+
+for host in host_list:
+    log_endpoint = tennant + "/api/v1/entity/infrastructure/hosts/" + host + "/logs"
+    response = requests.get(log_endpoint, params=payload)
+
+    if response.status_code != 200:
+        raise Exception('Error on GET /hosts/ code: {}'.format(response.status_code))
+
+    log_info = json.loads(response.text)
+
+    print("\nHost: {}".format(host))
+    print(log_info['logs'])
+
+# Try the same thing with process groups
+
+pg_endpoint = tennant + "/api/v1/entity/infrastructure/process-groups?includeDetails=false"
+
+response = requests.get(pg_endpoint, params=payload)
+
+if response.status_code != 200:
+    raise Exception('Error on GET /process-groups/ code: {}'.format(response.status_code))
+
+# collect the pg
+
+process_groups = json.loads(response.text)
+process_groups_list = []
+# host_list = hosts_response['']['entityId']
+
+print('\n')
+
+
+# pg = "PROCESS_GROUP-C915B59DE278E602"
+# pg_logs_endpoint = tennant + "/api/v1/entity/infrastructure/process-groups/{}/logs".format(pg)
+
