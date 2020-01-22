@@ -51,7 +51,7 @@ host_list = [host['entityId'] for host in hosts]
 
 # query the logs
 
-with open('hosts.csv','w', newline='') as csvfile:
+with open('host_logs.csv','w', newline='') as csvfile:
     linewriter = csv.writer(csvfile, delimiter=',')
     linewriter.writerow(["Host", "Path", "Size", "AvailableForAnalysis"])
     for host in host_list:

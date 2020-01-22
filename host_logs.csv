@@ -2,4 +2,4 @@ Host,Path,Size,AvailableForAnalysis
 HOST-B0590A8E1E74D6F0,Windows Application Log,20975616,True
 HOST-B0590A8E1E74D6F0,Windows System Log,20975616,True
 HOST-B0590A8E1E74D6F0,Windows Security Log,20975616,True
-HOST-86C7935A21C50F02,/var/log/syslog,337818,True
+HOST-86C7935A21C50F02,/var/log/syslog,340893,True

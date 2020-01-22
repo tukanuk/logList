@@ -1,33 +1,34 @@
 Process Group,Path,Size
-PROCESS_GROUP-B15069BAA4FD0D6F,c:\Users\ben.davidson\AppData\Local\1Password\logs\#-#-#.log,93202
-PROCESS_GROUP-3F58E84332667981,c:\ProgramData\CrashPlan\log\service.log,128415666
+PROCESS_GROUP-B15069BAA4FD0D6F,c:\Users\ben.davidson\AppData\Local\1Password\logs\#-#-#.log,93415
+PROCESS_GROUP-3F58E84332667981,c:\ProgramData\CrashPlan\log\service.log,131159757
 PROCESS_GROUP-19A66884085CCFE1,c:\Program Files\Palo Alto Networks\GlobalProtect\debug_drv.log,209744
 PROCESS_GROUP-0E7803F8D2689DF2,c:\Users\ben.davidson\AppData\Local\Packages\AppUp.IntelGraphicsExperience_8j3eq9eme6ctt\LocalState\gcc_log,20502
-PROCESS_GROUP-4A41C75A1A08C8AE,c:\Windows\SysWOW64\Gms.log,1043599
+PROCESS_GROUP-4A41C75A1A08C8AE,c:\Windows\SysWOW64\Gms.log,1045058
 PROCESS_GROUP-EC1EFAE293B5B4A1,c:\Windows\Temp\TAG009442875327-#-#.log,1835958
 PROCESS_GROUP-EC1EFAE293B5B4A1,c:\Windows\Temp\aria-debug-#.log,2625493
 PROCESS_GROUP-EC1EFAE293B5B4A1,c:\Users\ben.davidson\AppData\Local\Temp\TAG009442875327-#-#.log,78200
 PROCESS_GROUP-8B33AD7CC98E6B05,c:\Users\ben.davidson\AppData\Local\Temp\aria-debug-#.log,8236
 PROCESS_GROUP-944A2CEE87E6E3AA,c:\Windows\Temp\aria-debug-#.log,6693612
 PROCESS_GROUP-944A2CEE87E6E3AA,c:\ProgramData\Microsoft\IntuneManagementExtension\Logs\IntuneManagementExtension.log,493153
-PROCESS_GROUP-926ADF77297264FD,c:\Windows\Logs\CBS\CBS.log,9821034
+PROCESS_GROUP-926ADF77297264FD,c:\Windows\Logs\CBS\CBS.log,9832919
 PROCESS_GROUP-1D73957540A9B17A,c:\Users\ben.davidson\AppData\Roaming\Microsoft\Teams\meeting-addin\teams-meeting-addin-loader.log,8272
 PROCESS_GROUP-1D73957540A9B17A,c:\Users\ben.davidson\AppData\Roaming\Microsoft\Teams\meeting-addin\teams-meeting-addin.log,87832
 PROCESS_GROUP-4C43F47ABCF5A6DB,c:\Users\ben.davidson\AppData\Roaming\Slack\logs\browser.log,4657839
-PROCESS_GROUP-4C43F47ABCF5A6DB,c:\Users\ben.davidson\AppData\Roaming\Slack\logs\webapp-console.log,2302168
+PROCESS_GROUP-4C43F47ABCF5A6DB,c:\Users\ben.davidson\AppData\Roaming\Slack\logs\webapp-console.log,2303610
 PROCESS_GROUP-E463E3D72E17865F,c:\Users\ben.davidson\AppData\Roaming\JabraSDK\JabraNodeWrapper.log,47879
 PROCESS_GROUP-E463E3D72E17865F,c:\Users\ben.davidson\AppData\Roaming\JabraSDK\PanaCastWrapper.log,13359
-PROCESS_GROUP-E463E3D72E17865F,c:\Users\ben.davidson\AppData\Roaming\Jabra Direct\SoftphoneIntegration.log,757131
+PROCESS_GROUP-E463E3D72E17865F,c:\Users\ben.davidson\AppData\Roaming\Jabra Direct\SoftphoneIntegration.log,759382
 PROCESS_GROUP-E463E3D72E17865F,c:\Users\ben.davidson\AppData\Roaming\JabraSDK\JabraSDK_jabra-direct.log,827600
 PROCESS_GROUP-8A86EFE55DA45539,c:\Users\ben.davidson\AppData\Roaming\Code\logs\20200120T154430\main.log,2678
-PROCESS_GROUP-8A86EFE55DA45539,c:\Users\ben.davidson\AppData\Roaming\Code\logs\20200120T155106\exthost4\exthost.log,3808
 PROCESS_GROUP-8A86EFE55DA45539,c:\Users\ben.davidson\AppData\Roaming\Code\logs\20200117T081926\main.log,1462
+PROCESS_GROUP-8A86EFE55DA45539,c:\Users\ben.davidson\AppData\Roaming\Code\logs\20200120T155106\exthost4\exthost.log,3808
 PROCESS_GROUP-8A86EFE55DA45539,c:\Users\ben.davidson\AppData\Roaming\Code\logs\20200117T082358\renderer3.log,5036
 PROCESS_GROUP-8A86EFE55DA45539,c:\Users\ben.davidson\AppData\Roaming\Code\logs\20200117T081926\renderer1.log,10163
 PROCESS_GROUP-8A86EFE55DA45539,c:\Users\ben.davidson\AppData\Roaming\Code\logs\20200120T155106\renderer4.log,8244
-PROCESS_GROUP-8A86EFE55DA45539,c:\Users\ben.davidson\AppData\Roaming\Code\logs\20200122T104554\renderer1.log,3556
+PROCESS_GROUP-8A86EFE55DA45539,c:\Users\ben.davidson\AppData\Roaming\Code\logs\20200122T104554\renderer1.log,7403
 PROCESS_GROUP-8A86EFE55DA45539,c:\Users\ben.davidson\AppData\Roaming\Code\logs\20200122T104554\main.log,902
+PROCESS_GROUP-8A86EFE55DA45539,c:\Users\ben.davidson\AppData\Roaming\Code\logs\20200122T104554\exthost1\exthost.log,5712
 PROCESS_GROUP-DAA5114D2C7F2C1A,c:\Users\ben.davidson\AppData\Local\1Password\logs\#-#-#.log,131669
 PROCESS_GROUP-DAA5114D2C7F2C1A,c:\Users\ben.davidson\AppData\Local\Vivaldi\User Data\Default\Extension State\#.log,0
-PROCESS_GROUP-9CB18DB855530ADA,c:\Windows\Logs\CBS\CBS.log,9821034
-PROCESS_GROUP-019591F766455D40,/var/lib/dynatrace/remotepluginmodule/log/remoteplugin/RemotepluginlauncherLauncher_#-#.log,17395
+PROCESS_GROUP-9CB18DB855530ADA,c:\Windows\Logs\CBS\CBS.log,9832919
+PROCESS_GROUP-019591F766455D40,/var/lib/dynatrace/remotepluginmodule/log/remoteplugin/RemotepluginlauncherLauncher_#-#.log,17537
