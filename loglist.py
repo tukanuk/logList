@@ -1,5 +1,10 @@
+#!/usr/bin/env python3
+
+
+##TODO: use argparse to make arguments on weather you want it to be printed or not. 
 import json
 import requests
+import csv
 
 # Required API permissions
 # Access problem and event feed, metrics, and topology 
@@ -38,47 +43,70 @@ hosts = json.loads(response.text)
 host_list = []
 # host_list = hosts_response['']['entityId']
 
-print('\n')
-# print(hosts)
-
-for host in hosts:
-    host_list.append(host['entityId'])
+print('`\nHost Perspective')
+print("=================")
 
 # a list of hosts
-print(host_list)
+host_list = [host['entityId'] for host in hosts]
 
 # query the logs
 
-for host in host_list:
-    log_endpoint = tennant + "/api/v1/entity/infrastructure/hosts/" + host + "/logs"
-    response = requests.get(log_endpoint, params=payload)
+with open('hosts.csv','w', newline='') as csvfile:
+    linewriter = csv.writer(csvfile, delimiter=',')
+    linewriter.writerow(["Host", "Path", "Size", "AvailableForAnalysis"])
+    for host in host_list:
+        log_endpoint = tennant + "/api/v1/entity/infrastructure/hosts/" + host + "/logs"
+        response = requests.get(log_endpoint, params=payload)
+
+        if response.status_code != 200:
+            raise Exception('Error on GET /hosts/ code: {}'.format(response.status_code))
+
+        log_info = json.loads(response.text)
+
+        print("\n{}".format(host))
+        
+        for log in log_info['logs']: 
+            linewriter.writerow([host, log['path'], log['size'], log['availableForAnalysis']]) #honestly not too sure if this works lol. I think it should, otherwise you put it into a list. 
+            print("\t{:30} {:>9} Analysis: {}".format(log['path'], log['size'], log['availableForAnalysis']))
+
+    # Try the same thing with process groups
+
+    pg_endpoint = tennant + "/api/v1/entity/infrastructure/process-groups?includeDetails=false"
+
+    response = requests.get(pg_endpoint, params=payload)
 
     if response.status_code != 200:
-        raise Exception('Error on GET /hosts/ code: {}'.format(response.status_code))
+        raise Exception('Error on GET /process-groups/ code: {}'.format(response.status_code))
 
-    log_info = json.loads(response.text)
+    # collect the pg
 
-    print("\nHost: {}".format(host))
-    print(log_info['logs'])
+    process_groups = json.loads(response.text)
+    process_groups_list = []
+    # host_list = hosts_response['']['entityId']
 
-# Try the same thing with process groups
+with open('process_group_logs.csv', 'w', newline='') as csvfile1:
+    linewriter = csv.writer(csvfile1, delimiter=',') 
+    linewriter.writerow(["Process Group", "Path", "Size"])
+    print('\nProcess Group Perspective')
+    print('=========================')
+   
+    pg_list = {pg['entityId']: pg['displayName'] for pg in process_groups}
 
-pg_endpoint = tennant + "/api/v1/entity/infrastructure/process-groups?includeDetails=false"
+    for pg in pg_list:
+        # print("\n\n\nTEST " + pg)
+        # print(type(pg))
+        log_endpoint = tennant + "/api/v1/entity/infrastructure/process-groups/" + pg + "/logs"
+        response = requests.get(log_endpoint, params=payload)
 
-response = requests.get(pg_endpoint, params=payload)
+        if response.status_code != 200:
+            raise Exception('Error on GET /hosts/ code: {}'.format(response.status_code))
 
-if response.status_code != 200:
-    raise Exception('Error on GET /process-groups/ code: {}'.format(response.status_code))
+        log_info = json.loads(response.text)
 
-# collect the pg
-
-process_groups = json.loads(response.text)
-process_groups_list = []
-# host_list = hosts_response['']['entityId']
-
-print('\n')
-
-
-# pg = "PROCESS_GROUP-C915B59DE278E602"
-# pg_logs_endpoint = tennant + "/api/v1/entity/infrastructure/process-groups/{}/logs".format(pg)
-
+        print("\n{}".format(pg_list[pg]))
+        #ls = [i['path'] for log_info in log_info['logs'][i]]
+        #print(ls)
+        # print(log_info) 
+        for log in log_info['logs']:
+            linewriter.writerow([pg, log['path'], log['size']])
+            print("\t{:110} {:>9}".format(log['path'], log['size']))
