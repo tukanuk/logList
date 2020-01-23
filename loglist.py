@@ -2,7 +2,6 @@
 
 
 
-##TODO: use argparse to make arguments on weather you want it to be printed or not. 
 import json
 import requests
 import csv
@@ -29,8 +28,6 @@ def main():
     parser.add_argument("-q", "--quiet",
                         help="no output printed to terminal",
                         action="store_true")
-    # parser.add_argument("-h", "--hosts",
-    #                     help="Prints out host logs")
     parser.add_argument("-m", "--managed",
                         help="is the tenant managed?(not saas)",
                         action="store_true")
@@ -64,7 +61,7 @@ def main():
     timestr = time.strftime("%Y%m%d_%H%M%S")
 
 
-    # is the tennat Saas?
+    
     payload = {'Api-token': api_token}
 
     if args.hosts:
@@ -79,6 +76,7 @@ def main():
 
 def get_host_logs(tennant, saas, quiet, payload, timestr, environment_id=""):
 
+# is the tennat Saas?
 # set the host endpoint
     if saas:
         host_endpoint = tennant + "/api/v1/entity/infrastructure/hosts?includeDetails=false"
