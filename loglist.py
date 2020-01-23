@@ -39,10 +39,10 @@ def main():
     group = parser.add_mutually_exclusive_group()
     #can't use -h because that's help
     group.add_argument("-g", "--hosts",
-                        help="only gives host log information. If neither -p or -h is specified, outputs both",
+                        help="only gives host log information. If neither -g or -p is specified, outputs both",
                         action="store_true")
     group.add_argument("-p", "--processgroups", 
-                        help="only gives process group log info. If neither -p or -h is specified, outputs both",
+                        help="only gives process group log info. If neither -g or -p is specified, outputs both",
                         action="store_true")
     
     args = parser.parse_args()
