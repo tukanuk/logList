@@ -46,12 +46,9 @@ def main():
 
     # dynatrace variables
     # not to be stored in script
-
     
-    #tennant = "https://kqw28951.dev.dynatracelabs.com"
     tennant = args.url
 
-    #api_token = "RZH_HX6BRDSpYF2thaLKG"
     api_token = args.token
 
     environment_id = ""
