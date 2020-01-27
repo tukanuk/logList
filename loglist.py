@@ -31,6 +31,7 @@ def main():
     parser.add_argument("-m", "--managed",
                         help="is the tenant managed?(not saas)",
                         action="store_true")
+    # parser.add
 
     ## A mutually exclusive group so you can only ask for pgs or hosts, otherwise without you get none.
     group = parser.add_mutually_exclusive_group()
