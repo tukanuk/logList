@@ -106,6 +106,7 @@ def get_host_logs(tennant, saas, quiet, payload, timestr, environment_id=""):
     f_name = "host_logs_" + timestr + ".csv"
     with open(f_name,'w', newline='') as csvfile:
         linewriter = csv.writer(csvfile, delimiter=',')
+        linewriter.writerow([tennant])
         linewriter.writerow(["Host", "Path", "Size", "AvailableForAnalysis"])
         for host in host_list:
             log_endpoint = tennant + "/api/v1/entity/infrastructure/hosts/" + host + "/logs"
