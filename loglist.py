@@ -110,6 +110,7 @@ def get_host_logs(tennant, saas, quiet, payload, timestr, environment_id=""):
         linewriter.writerow(["Host", "Path", "Size", "AvailableForAnalysis"])
         for host in host_list:
             log_endpoint = tennant + "/api/v1/entity/infrastructure/hosts/" + host + "/logs"
+            # time.sleep(0.5) # slow the script to keep under API limit
             response = requests.get(log_endpoint, params=payload)
 
             if response.status_code != 200:
@@ -160,6 +161,7 @@ def get_process_group_logs(tennant, quiet, payload,timestr):
             # print("\n\n\nTEST " + pg)
             # print(type(pg))
             log_endpoint = tennant + "/api/v1/entity/infrastructure/process-groups/" + pg + "/logs"
+            # time.sleep(0.5) # slow the script to keep under API limit
             response = requests.get(log_endpoint, params=payload)
 
             if response.status_code != 200:
