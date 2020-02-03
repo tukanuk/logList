@@ -13,7 +13,8 @@ Get the process groups and host groups of a folder
 
 ```positional arguments:
   url                  tennant url with format
-                       https://[tennant_key].live.dynatrace.com
+                       Saas: https://[tennant_key].live.dynatrace.com
+                       Managed: https://{your-domain}/e/{your-environment-id
   token                Your API Token generated with Access
 
 optional arguments:
