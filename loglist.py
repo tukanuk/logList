@@ -99,14 +99,15 @@ def get_host_logs(tennant, saas, quiet, payload, timestr, environment_id=""):
         print("=================")
 
     # a list of hosts
-    host_list = [host['entityId'] for host in hosts]
-
+    # host_list = [host['entityId'] for host in hosts]
+    host_list = {host['entityId']: host['displayName'] for host in hosts}
+    #   pg_list = {pg['entityId']: pg['displayName'] for pg in process_groups}
     # query the logs
     f_name = "host_logs_" + timestr + ".csv"
     with open(f_name,'w', newline='') as csvfile:
         linewriter = csv.writer(csvfile, delimiter=',')
         linewriter.writerow([tennant])
-        linewriter.writerow(["Host", "Path", "Size", "AvailableForAnalysis"])
+        linewriter.writerow(["Host", "Entity Id", "Path", "Size", "AvailableForAnalysis"])
         for host in host_list:
             log_endpoint = tennant + "/api/v1/entity/infrastructure/hosts/" + host + "/logs"
             # time.sleep(0.5) # slow the script to keep under API limit
@@ -121,7 +122,7 @@ def get_host_logs(tennant, saas, quiet, payload, timestr, environment_id=""):
                 print("\n{}".format(host))
             
             for log in log_info['logs']: 
-                linewriter.writerow([host, log['path'], log['size'], log['availableForAnalysis']]) #honestly not too sure if this works lol. I think it should, otherwise you put it into a list. 
+                linewriter.writerow([host_list[host], host, log['path'], log['size'], log['availableForAnalysis']]) #honestly not too sure if this works lol. I think it should, otherwise you put it into a list. 
                 if not quiet:
                     print("\t{:30} {:>9} Analysis: {}".format(log['path'], log['size'], log['availableForAnalysis']))
 
@@ -148,7 +149,7 @@ def get_process_group_logs(tennant, quiet, payload,timestr):
     f_name = "process_group_logs_" + timestr + ".csv"
     with open(f_name, 'w', newline='') as csvfile1:
         linewriter = csv.writer(csvfile1, delimiter=',') 
-        linewriter.writerow(["Process Group", "Path", "Size"])
+        linewriter.writerow(["Process Group", "Entity ID", "Path", "Size"])
 
         if not quiet:
             print('\nProcess Group Perspective')
@@ -174,7 +175,7 @@ def get_process_group_logs(tennant, quiet, payload,timestr):
             #print(ls)
             # print(log_info) 
             for log in log_info['logs']:
-                linewriter.writerow([pg, log['path'], log['size']])
+                linewriter.writerow([pg_list[pg], pg, log['path'], log['size']])
                 if not quiet:
                     print("\t{:110} {:>9}".format(log['path'], log['size']))
 
