@@ -73,7 +73,7 @@ def main():
 
 def get_host_logs(tennant, saas, quiet, payload, timestr, environment_id=""):
 
-# is the tennat Saas?
+# is the tennat `Saas?
 # set the host endpoint
     if saas:
         host_endpoint = tennant + "/api/v1/entity/infrastructure/hosts?includeDetails=false"
@@ -122,9 +122,10 @@ def get_host_logs(tennant, saas, quiet, payload, timestr, environment_id=""):
                 print("\n{}".format(host))
             
             for log in log_info['logs']: 
-                linewriter.writerow([host_list[host], host, log['path'], log['size'], log['availableForAnalysis']]) #honestly not too sure if this works lol. I think it should, otherwise you put it into a list. 
-                if not quiet:
-                    print("\t{:30} {:>9} Analysis: {}".format(log['path'], log['size'], log['availableForAnalysis']))
+                if log['availableForAnalysis'] == True:
+                    linewriter.writerow([host_list[host], host, log['path'], log['size'], log['availableForAnalysis']]) #honestly not too sure if this works lol. I think it should, otherwise you put it into a list. 
+                    if not quiet:
+                        print("\t{:30} {:>9} Analysis: {}".format(log['path'], log['size'], log['availableForAnalysis']))
 
     print(f_name, " Created")
 
@@ -175,9 +176,10 @@ def get_process_group_logs(tennant, quiet, payload,timestr):
             #print(ls)
             # print(log_info) 
             for log in log_info['logs']:
-                linewriter.writerow([pg_list[pg], pg, log['path'], log['size']])
-                if not quiet:
-                    print("\t{:110} {:>9}".format(log['path'], log['size']))
+                if log['availableForAnalysis'] == True:
+                    linewriter.writerow([pg_list[pg], pg, log['path'], log['size']])
+                    if not quiet:
+                        print("\t{:110} {:>9}".format(log['path'], log['size']))
 
     print(f_name," created")
 
