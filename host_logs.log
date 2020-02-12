@@ -1,0 +1,86 @@
+https://igo04931.sprint.dynatracelabs.com
+Host,Entity Id,Path,Size,AvailableForAnalysis
+AccAzureClAG01.oep04he302lupe5xxl50ofnudd.ax.internal.cloudapp.net,HOST-BFDE4980994CA636,/var/log/syslog,6852,True
+AccAzureClAG02.oep04he302lupe5xxl50ofnudd.ax.internal.cloudapp.net,HOST-7C01FAE548FE6A4C,/var/log/syslog,7233,True
+AccAzureClAG03.oep04he302lupe5xxl50ofnudd.ax.internal.cloudapp.net,HOST-D8802DE5E97674A1,/var/log/syslog,6846,True
+AccAzureClAG04.oep04he302lupe5xxl50ofnudd.ax.internal.cloudapp.net,HOST-D4868F45E35DDB4F,/var/log/syslog,5937,True
+ActiveGate 1 (AT Infrastructure),HOST-53FEBA3C8F2FBFF0,/var/log/messages,1788,True
+ActiveGate 1 (AT Infrastructure),HOST-53FEBA3C8F2FBFF0,/var/log/syslog,360758,True
+Cl-ATExploratory-AcceptanceTeamExploratory Node-1,HOST-00E42181D3F33A39,/var/log/messages,4560045,True
+Cl-ATExploratory-AcceptanceTeamExploratory Node-2,HOST-E347F72FE2B78509,/var/log/messages,4184499,True
+Cl-ATExploratory-AcceptanceTeamExploratory PSG-1,HOST-441C7F41072A55E9,/var/log/syslog,396118,True
+Cl-Azure-AcceptanceTeam Node-4,HOST-B08B5490FC3B720C,/var/log/messages,3732380,True
+Cl-Azure-AcceptanceTeam Node-5,HOST-6731392F4DC7E54D,/var/log/messages,3766981,True
+Cl-Azure-AcceptanceTeam Node-6,HOST-6D60EF9D3ABBB829,/var/log/messages,3816438,True
+Cl-Azure-AcceptanceTeam nfs server,HOST-558232BFE57451E5,/var/log/syslog,28549,True
+Cl-EC2-AcceptanceTeam Node-1,HOST-C4288427059A6B11,/var/log/syslog,28052,True
+Cl-EC2-AcceptanceTeam Node-2,HOST-2E094A4EE4FB5939,/var/log/syslog,28904,True
+Cl-Offline-mode-AcceptanceTeam Node-1,HOST-D12D3DD538641990,/var/log/syslog,41178,True
+Cl-Offline-mode-AcceptanceTeam Node-2,HOST-4628BB4DED2DFF3C,/var/log/syslog,30806,True
+Cl-Permanent247-AcceptanceTeam Cluster AG,HOST-3E979808422AD5EA,Windows Application Log,1118208,True
+Cl-Permanent247-AcceptanceTeam Cluster AG,HOST-3E979808422AD5EA,Windows System Log,1118208,True
+Cl-Permanent247-AcceptanceTeam Cluster AG,HOST-3E979808422AD5EA,Windows Security Log,20975616,True
+Cl-Permanent247-AcceptanceTeam Node-1,HOST-7C47BA34B5285EE6,/var/log/messages,3751042,True
+Cl-Permanent247-AcceptanceTeam Node-2,HOST-78D7EFD2A690F5EA,/var/log/messages,3802226,True
+Cl-Permanent247-AcceptanceTeam nfs server,HOST-E73C499042AF3D47,/var/log/messages,177620,True
+Cl-SprintMon-_DynatraceMonitoringForSprint Node-1,HOST-7DCD08E4F9EB5B1E,/var/log/syslog,3384,True
+Cl-SprintMon-_DynatraceMonitoringForSprint Node-2,HOST-20E51BAB5B72F33D,/var/log/syslog,2729,True
+Cl-SprintMon-_DynatraceMonitoringForSprint Node-3,HOST-FE7C628C765DD30E,/var/log/syslog,4863,True
+Cl-SprintMon-_DynatraceMonitoringForSprint Node-4,HOST-320E4C0D5ECC0E33,/var/log/syslog,23375,True
+Cl-SprintMon-_DynatraceMonitoringForSprint Node-5,HOST-E824074657AB7676,/var/log/syslog,2111,True
+Cl-SprintMon-_DynatraceMonitoringForSprint PSG-1,HOST-B3D6A1043D310166,/var/log/syslog,1976,True
+Cl-UITestAuto Cas-10.176.37.175,HOST-AF6B176D36EFF2BB,/var/log/messages,352862,True
+Cl-UITestAuto Cas-10.176.38.128,HOST-DE93CF67F6DA5D1A,/var/log/messages,353682,True
+Cl-UITestAuto Cas-10.176.39.245,HOST-A4D960304C24BD02,/var/log/messages,350242,True
+Cl-UITestAuto ES-10.176.37.83,HOST-876F9581B04EBCEE,/var/log/messages,346540,True
+Cl-UITestAuto ES-10.176.38.78,HOST-931F50C1455F6E41,/var/log/messages,348246,True
+Cl-UITestAuto ES-10.176.39.27,HOST-4ED3313995EC8C2C,/var/log/messages,344933,True
+Cl-UITestAuto PSG-10.176.36.110,HOST-46D5F283164DD8D2,/var/log/messages,469001,True
+Cl-UITestAuto PSG-10.176.36.140,HOST-B0605D3054E03058,/var/log/messages,463821,True
+Cl-UITestAuto PSG-10.176.36.62,HOST-B437B666391CC181,/var/log/messages,466127,True
+Cl-UITestAuto Ser-1,HOST-D4A3250C2F78CA5A,/var/log/messages,349925,True
+Cl-UITestAuto Ser-2,HOST-3C0CB7F0A4C641E3,/var/log/messages,349526,True
+Cl-UITestAuto Ser-3,HOST-08908E3028F76EB0,/var/log/messages,346717,True
+PL1L-DT-MGT1,HOST-F98BD0B3C5F5435C,/var/log/messages,58207,True
+PL1L-DT-MGT2,HOST-862ED2E93F1BE8D0,/var/log/messages,58356,True
+PL1L-DT-MGT3,HOST-DFAF19EC9F115E65,/var/log/messages,58061,True
+Sprint Monitoring - NFS Server,HOST-E5BA1C0290652655,/var/log/syslog,4037,True
+SyntheticAG1,HOST-B68FFC41E764C82D,/var/log/syslog,13379,True
+SyntheticAG2,HOST-DE402A6CF1A29D12,/var/log/syslog,13472,True
+app-cdh-sprint-environment,HOST-64E909CE85CBD7D6,/var/log/messages,345327,True
+app-cdh-sprint-environment,HOST-942B26C94992D2C5,/var/log/messages,352270,True
+azuredemo1sgw.lab.dynatrace.org,HOST-9837D11CF076EA68,/var/log/syslog,4348463,True
+demo2azureag,HOST-FBA6CE68882F8A72,/var/log/syslog,4318545,True
+gdn-rx-co7-acc-managed-node-1.lab.dynatrace.org,HOST-7AE72841BA7DCA3A,/var/log/messages,11583,True
+gdn-rx-co7-acc-managed-node-1.lab.dynatrace.org,HOST-3C792D667B0AFBF2,/var/log/messages,13909,True
+gdn-rx-co7-acc-managed-node-1.lab.dynatrace.org,HOST-148849F3A346AB93,/var/log/messages,9748,True
+gdn-rx-co7-acc-managed-node-1.lab.dynatrace.org,HOST-56856EEE2B356EF7,/var/log/messages,13386,True
+ip-10-176-32-103,HOST-82E4FE0DD84137C8,/var/log/syslog,11763,True
+ip-10-176-32-11.ec2.internal,HOST-36447C768BE94F18,/var/log/messages,346592,True
+ip-10-176-32-119,HOST-ECAE6767D33B6FA1,/var/log/syslog,12216,True
+ip-10-176-32-12.ec2.internal,HOST-147069AC0A8A0456,/var/log/messages,4222227,True
+ip-10-176-32-134.ec2.internal,HOST-E738E4D3A3844853,/var/log/messages,3657037,True
+ip-10-176-32-142,HOST-B519CA6165FDEBA4,/var/log/syslog,12329,True
+ip-10-176-32-183,HOST-617B91CB3BAD5BA0,/var/log/syslog,12012,True
+ip-10-176-32-190.ec2.internal,HOST-2DE97C72DB244314,/var/log/messages,3525803,True
+ip-10-176-34-164.ec2.internal,HOST-8501061C4AC3C8E6,/var/log/messages,6222445,True
+ip-10-176-34-250,HOST-249ADDB362ECFC27,/var/log/syslog,9851,True
+ip-10-176-34-52.ec2.internal,HOST-1BAA0082291AEE43,/var/log/messages,4203992,True
+ip-10-176-39-167,HOST-439273905C17B61C,/var/log/messages,797276,True
+ip-10-176-39-200,HOST-F13C69F94E01FE34,/var/log/messages,792633,True
+ip-10-176-39-214,HOST-AF9BC9CB4C0D65EA,/var/log/messages,798155,True
+ip-10-176-40-46.eu-west-1.compute.internal,HOST-09CD59214904655C,/var/log/messages,4188130,True
+ip-10-176-42-133,HOST-28F6B8B81529D7CE,/var/log/messages,798072,True
+ip-10-176-42-147,HOST-E2DF6C30A977DBA1,/var/log/messages,800329,True
+ip-10-176-42-79,HOST-450BDD9B18112A5F,/var/log/messages,786534,True
+ip-172-31-2-190,HOST-66CB94D34415FC95,/var/log/syslog,12161,True
+ip-172-31-37-68,HOST-BD32DC65930F5506,/var/log/syslog,12086,True
+ls-ub-lf4008ev.dynatrace.vmta,HOST-9C93FA1B5D0E7B57,/var/log/syslog,23809,True
+opc-AppE-1R8FWKAWZMEWM,HOST-32E12A9D0AFF5CE5,/var/log/messages,347417,True
+opc-AppE-1R8FWKAWZMEWM,HOST-9F0935C6941709C8,/var/log/messages,351128,True
+opcsvc-sprint,HOST-AFC0397F66EA3F16,/var/log/messages,5770902,True
+opcsvc-sprint,HOST-7BE6AF0254C9938D,/var/log/messages,5762254,True
+opcsvc-sprint,HOST-53D5EE6A8162304C,/var/log/messages,5785055,True
+opcsvc-sprint,HOST-CE65C22D0D0B82E1,/var/log/messages,5783112,True
+vmware-demo1ag,HOST-A35BBCEF9A858B08,/var/log/syslog,382148,True
+vmware-demo2ag,HOST-864068828671262E,/var/log/syslog,374026,True

@@ -7,6 +7,7 @@ import requests
 import csv
 import argparse
 import time
+from shutil import copyfile
 
 # Required API permissions
 # Access problem and event feed, metrics, and topology 
@@ -70,6 +71,21 @@ def main():
         get_process_group_logs(tennant=args.url, quiet=args.quiet,timestr=timestr, payload=payload)
     
 
+def get_hosts(tennant, quiet, payload, timestr, environment_id=""):
+    host_endpoint = tennant + "/api/v1/entity/infrastructure/hosts?includeDetails=false"
+
+    # make the host request
+
+    response = requests.get(host_endpoint, params=payload)
+
+    if response.status_code != 200:
+        raise Exception('Error on GET /hosts/ code: {}'.format(response.status_code))
+
+    # collect the hosts
+
+    hosts = json.loads(response.text)
+
+    return hosts
 
 def get_host_logs(tennant, saas, quiet, payload, timestr, environment_id=""):
 
@@ -122,17 +138,26 @@ def get_host_logs(tennant, saas, quiet, payload, timestr, environment_id=""):
                 print("\n{}".format(host))
             
             for log in log_info['logs']: 
-                if log['availableForAnalysis'] != "Null":
+                if log['availableForAnalysis'] == True:
                     linewriter.writerow([host_list[host], host, log['path'], log['size'], log['availableForAnalysis']]) #honestly not too sure if this works lol. I think it should, otherwise you put it into a list. 
                     if not quiet:
                         print("\t{:30} {:>9} Analysis: {}".format(log['path'], log['size'], log['availableForAnalysis']))
 
     print(f_name, " Created")
+    copyfile(f_name, "host_logs.csv")
+
 
 # Try the same thing with process groups
 
 
 def get_process_group_logs(tennant, quiet, payload,timestr):
+
+
+    hosts = get_hosts(tennant, quiet, payload, timestr, environment_id="")
+    host_list_label = {host['entityId']: host['displayName'] for host in hosts}
+    
+    # for entity, display in host_list_label.items():
+    #     print(entity + ": " + display)
 
     pg_endpoint = tennant + "/api/v1/entity/infrastructure/process-groups?includeDetails=false"
 
@@ -150,7 +175,7 @@ def get_process_group_logs(tennant, quiet, payload,timestr):
     f_name = "process_group_logs_" + timestr + ".csv"
     with open(f_name, 'w', newline='') as csvfile1:
         linewriter = csv.writer(csvfile1, delimiter=',') 
-        linewriter.writerow(["Process Group", "Entity ID", "Path", "Size"])
+        linewriter.writerow(["Process Group", "Entity ID", "Path", "Size", "Host", "Host Entity ID", "Analysis"])
 
         if not quiet:
             print('\nProcess Group Perspective')
@@ -176,17 +201,19 @@ def get_process_group_logs(tennant, quiet, payload,timestr):
             #print(ls)
             # print(log_info) 
             for log in log_info['logs']:
-                # if log['availableForAnalysis'] == True:
-                linewriter.writerow([pg_list[pg], pg, log['path'], log['size'], log['hosts']])
-                if not quiet:
-                    print("\t{:110} {:>9}".format(log['path'], log['size']))
+                host_list = log['hosts']
+                for host in host_list:
+                    if host['hostId'] in host_list_label:
+                        displayName = host_list_label[host['hostId']]
+                    else:
+                        displayName = "Unknown"
+                    if host['availableForAnalysis'] != "sTrue":
+                        linewriter.writerow([pg_list[pg], pg, log['path'], host['logSize'], displayName, host['hostId'], host['availableForAnalysis']])
+                    if not quiet:
+                        print("\t{:<132} {:>9} {:>25}".format(log['path'], host['logSize'], host['hostId']))
 
     print(f_name," created")
+    copyfile(f_name, "process_group_logs.csv")
 
 if __name__ == "__main__":
     main()
-
-
-    
-
-
