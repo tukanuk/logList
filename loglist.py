@@ -175,6 +175,7 @@ def get_process_group_logs(tennant, quiet, payload,timestr):
     f_name = "process_group_logs_" + timestr + ".csv"
     with open(f_name, 'w', newline='') as csvfile1:
         linewriter = csv.writer(csvfile1, delimiter=',') 
+        linewriter.writerow([tennant])
         linewriter.writerow(["Process Group", "Entity ID", "Path", "Size", "Host", "Host Entity ID", "Analysis"])
 
         if not quiet:
@@ -207,7 +208,7 @@ def get_process_group_logs(tennant, quiet, payload,timestr):
                         displayName = host_list_label[host['hostId']]
                     else:
                         displayName = "Unknown"
-                    if host['availableForAnalysis'] != "sTrue":
+                    if host['availableForAnalysis'] == True:
                         linewriter.writerow([pg_list[pg], pg, log['path'], host['logSize'], displayName, host['hostId'], host['availableForAnalysis']])
                     if not quiet:
                         print("\t{:<132} {:>9} {:>25}".format(log['path'], host['logSize'], host['hostId']))
