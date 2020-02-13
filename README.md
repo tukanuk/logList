@@ -2,7 +2,9 @@
 
 Uses the Dynatrace API to build a list of log files that are being monitored.
 
-Outputs to `host_logs[datetime].csv` and `process_group_logs[datetime].csv`
+Most recent output is always `host_logs.csv` and `process_group_logs.csv`
+
+Each outputs archived as `host_logs[datetime].csv` and `process_group_logs[datetime].csv`
 
 
 ## Usage
